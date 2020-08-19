@@ -10,6 +10,9 @@
 html{
   font-size:62.5%;
   box-sizing:border-box;
+  @media only screen (max-width:35em){
+    font-size:56.25%;
+  }
 }
 *,*::before,*::after{
   padding:0;
