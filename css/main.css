@@ -12,7 +12,7 @@ html {
           box-sizing: border-box;
 }
 
-@media only screen and (max-width: 35em) {
+@media only screen and (max-width: 37.5em) {
   html {
     font-size: 56.25%;
   }
@@ -89,8 +89,9 @@ body {
   padding: 10rem 6rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(45rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  -ms-grid-columns: (minmax(min-content, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(-webkit-min-content, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
   grid-gap: 7rem;
   color: black;
 }
@@ -112,12 +113,29 @@ body {
       justify-self: end;
 }
 
+.about-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(45rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-gap: 7rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .about-wrapper {
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+}
+
 .image {
   -webkit-filter: brightness(68%);
           filter: brightness(68%);
   position: relative;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -143,8 +161,9 @@ p {
   padding: 10rem 6rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (minmax(min-content, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(-webkit-min-content, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
   grid-gap: 7rem;
   color: black;
 }
@@ -160,8 +179,8 @@ p {
   grid-column: 1/-1;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(35rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 7rem;
   justify-items: center;
   margin-bottom: 3rem;
@@ -200,8 +219,9 @@ p {
   background-color: var(--font-color);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(40rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  -ms-grid-columns: (minmax(min-content, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(-webkit-min-content, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
   grid-gap: 7rem;
 }
 
@@ -209,6 +229,21 @@ p {
   grid-column: 1/-1;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+.stories-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(45rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+  grid-gap: 7rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .stories-wrapper {
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
 }
 
 .stories-img {
@@ -282,6 +317,14 @@ p {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .navigation_button {
+    height: 6rem;
+    width: 6rem;
+    right: 4rem;
+  }
+}
+
 .navigation_background {
   position: fixed;
   background-image: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
@@ -293,6 +336,14 @@ p {
   border-radius: 50%;
   -webkit-transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
   transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navigation_background {
+    height: 5rem;
+    width: 5rem;
+    right: 4.5rem;
+  }
 }
 
 .navigation_nav {
@@ -348,6 +399,12 @@ p {
 .navigation_icon {
   position: relative;
   margin-top: 3.5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navigation_icon {
+    margin-top: 3rem;
+  }
 }
 
 .navigation_icon, .navigation_icon::before, .navigation_icon::after {
